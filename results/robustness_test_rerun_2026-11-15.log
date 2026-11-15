@@ -1,0 +1,27 @@
+ROBUSTNESS TEST  reps=[('hexagon', 'armchair', np.float64(2.8)), ('hexagon', 'zigzag', np.float64(2.8))]  nk=2  Nds=(3, 4)  U/t in (1.15,)
+==============================================================================
+ Nd    k rep                    |dN|    gap   isol  Edisp  w_def  mu_edge       q       p flat?
+------------------------------------------------------------------------------
+  3    G hexagon/armchair R2.8     8  0.948  0.208  0.000  0.361   0.0298  0.0752  0.0298 yes
+  3    G hexagon/zigzag R2.8      16  1.215  0.607  0.000  0.242   0.0962  0.1470  0.0962 yes
+      -> dq(hi-lo)=+0.0718  dp(hi-lo)=+0.0663  order HOLDS
+------------------------------------------------------------------------------
+  3  2x2 hexagon/armchair R2.8     8  0.941  0.187  0.009  0.247   0.0298  0.0461  0.0298 yes
+  3  2x2 hexagon/zigzag R2.8      16  1.211  0.590  1.236  0.270   0.0962  0.1591  0.0962 NO
+      -> dq(hi-lo)=+0.1130  dp(hi-lo)=+0.0663  order HOLDS
+------------------------------------------------------------------------------
+  4    G hexagon/armchair R2.8    15  0.960  0.480  0.000  0.187   0.0307  0.0897  0.0307 yes
+  4    G hexagon/zigzag R2.8      30  1.217  0.608  0.000  0.230   0.0967  0.1396  0.0967 yes
+      -> dq(hi-lo)=+0.0499  dp(hi-lo)=+0.0660  order HOLDS
+------------------------------------------------------------------------------
+  4  2x2 hexagon/armchair R2.8    15  0.964  0.482  0.000  0.193   0.0307  0.0931  0.0307 yes
+  4  2x2 hexagon/zigzag R2.8      30    nan    nan  0.000  0.024   0.0967  0.0000  0.0967 NO
+      -> dq(hi-lo)=-0.0931  dp(hi-lo)=+0.0660  order BROKEN
+------------------------------------------------------------------------------
+PRE-REGISTERED VERDICT:
+  ARTIFACT -> the ordering flips under k-mesh and/or Nd change.
+  The core-scan 'trade-off' was a finite-cell / Gamma artifact. The
+  honest outcome: this method at this scale does NOT establish the
+  effect. A clean negative - still a publishable methodological note.
+    flip at Nd=4 k=2: dq=-0.0931 dp=0.066
+saved results/robustness_test.json  wall 398.7 s

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A pre-registered negative result on the parasitic-edge-moment versus qubit-quality trade-off in holey-graphene defect qubits"
+type: software
+authors:
+  - family-names: Bilgin
+    given-names: Faruk Sami
+    affiliation: Independent Researcher
+    orcid: "https://orcid.org/0009-0001-9064-4410"
+date-released: 2026-11-15
+license: MIT
+repository-code: "https://github.com/FarukSamiBilgin/holey-graphene-antidot-qubit"
